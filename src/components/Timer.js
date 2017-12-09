@@ -26,7 +26,7 @@ class Timer extends React.Component {
   // Work interval.
   work(currentIteration, iterations, work, shortRest, longRest) {
     this.runInterval(work, () => {
-      this.rest(currentIteration + 1, iterations, work, shortRest, longRest)
+      this.rest(currentIteration, iterations, work, shortRest, longRest)
     })
   }
 
