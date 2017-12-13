@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import Timer from './Timer'
+import { fetchQuote } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -13,6 +14,12 @@ const mapStateToProps = (state) => {
   }
 }
 
-const TimerContainer = connect(mapStateToProps)(Timer)
+const mapDispatchToWork = (dispatch) => {
+  return {
+    fetchQuote: () => { dispatch(fetchQuote()) }
+  }
+}
+
+const TimerContainer = connect(mapStateToProps, mapDispatchToWork)(Timer)
 
 export default TimerContainer

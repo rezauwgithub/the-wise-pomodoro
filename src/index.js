@@ -1,13 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import { createStore, applyMiddleware } from 'redux'
 import pomodoroReducer from './reducer'
 import { Provider } from 'react-redux'
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-const store = createStore(pomodoroReducer)
+const store = createStore(pomodoroReducer, applyMiddleware(
+  thunkMiddleware
+))
 
 render(
   <Provider store={store}>

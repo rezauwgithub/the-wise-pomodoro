@@ -1,6 +1,7 @@
 import React from 'react'
 import DashboardContainer from './DashboardContainer'
 import TimerContainer from './TimerContainer'
+import QuoteContainer from './QuoteContainer'
 
 // Outermost container.
 //
@@ -11,6 +12,7 @@ class Pomodoro extends React.Component {
       <div>
         <DashboardContainer />
         <TimerContainer />
+        <QuoteContainer />
       </div>
     )
   }
