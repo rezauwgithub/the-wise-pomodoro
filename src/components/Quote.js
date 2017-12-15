@@ -4,9 +4,11 @@ function Quote(props) {
   const {quote, author} = props
 
   return (
-    <div>
-      <blockquote>{ quote }</blockquote>
-      <i>{ author }</i>
+    <div className="columns mt-2">
+      <blockquote className="column col-12 text-center divider">
+        <p>{ quote }</p>
+        <cite>- { author }</cite>
+      </blockquote>
     </div>
   )
 }

@@ -9,9 +9,9 @@ import QuoteContainer from './QuoteContainer'
 class Pomodoro extends React.Component {
   render() {
     return (
-      <div>
-        <DashboardContainer />
+      <div className="divider">
         <TimerContainer />
+        <DashboardContainer />
         <QuoteContainer />
       </div>
     )

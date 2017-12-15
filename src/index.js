@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import 'spectre.css/dist/spectre.min.css'
 
 const store = createStore(pomodoroReducer, applyMiddleware(
   thunkMiddleware
