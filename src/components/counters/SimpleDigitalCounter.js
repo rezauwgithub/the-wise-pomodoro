@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import "./SimpleDigitalCounter.css"
 
 // Simple counter that displays the counter through digits.
 function SimpleDigitalCounter(props) {
@@ -12,10 +11,8 @@ function SimpleDigitalCounter(props) {
 
   return (
     <div className="columns">
-      <div className="column col-12 text-center simple-digital-counter">
-        <span className="rounded simple-digital-counter-digits">{formatTime(minutes)}</span>
-        <span className="rounded simple-digital-counter-separator">::</span>
-        <span className="rounded simple-digital-counter-digits">{formatTime(seconds)}</span>
+      <div className="column col-12 text-center d-inline-block" style={ { "font-size": "6em" } }>
+        <span>{formatTime(minutes)}:{formatTime(seconds)}</span>
       </div>
     </div>
   )
