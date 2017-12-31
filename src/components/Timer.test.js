@@ -26,7 +26,7 @@ describe('Timer', () => {
       />)
   })
 
-  test("starts when receive `running` props as `true`", () => {
+  test("starts when receives `running` as `true`", () => {
     wrapper.setProps({
       running: true
     })
@@ -34,7 +34,7 @@ describe('Timer', () => {
     expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 25 * 60 * 1000)
   })
 
-  test("does not start when receives `running` props as `false`", () => {
+  test("does not start when receives `running` as `false`", () => {
     wrapper.setProps({
       running: false
     })
@@ -42,7 +42,7 @@ describe('Timer', () => {
     expect(setTimeout).not.toHaveBeenCalled()
   })
 
-  test("resets counter when receiver `running` props as `false`", () => {
+  test("resets counter when receives `running` as `false`", () => {
     wrapper.setProps({
       work: 12,
       running: false
@@ -51,7 +51,7 @@ describe('Timer', () => {
     expect(wrapper.state("counter")).toBe(12)
   })
 
-  test("renders the counter view given as `counterView` props", () => {
+  test("renders Counter forwarding needed props", () => {
     wrapper.setProps({
       running: false
     })
