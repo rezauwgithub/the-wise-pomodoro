@@ -1,14 +1,14 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Pomodoro from './Pomodoro'
-import TimerContainer from './TimerContainer'
-import DashboardContainer from './DashboardContainer'
+import App from './App'
+import TimerContainer from './components/TimerContainer'
+import DashboardContainer from './components/DashboardContainer'
 
-describe('Pomodoro', () => {
+describe('App', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallow(<Pomodoro />)
+    wrapper = shallow(<App />)
   })
 
   test("renders TimerContainer", () => {
