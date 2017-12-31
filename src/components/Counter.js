@@ -54,7 +54,7 @@ class Counter extends React.Component {
 Counter.propTypes = {
   minutes: PropTypes.number.isRequired,
   running: PropTypes.bool.isRequired,
-  counterView: PropTypes.func.isRequired
+  counterView: PropTypes.element.isRequired
 }
 
 export default Counter

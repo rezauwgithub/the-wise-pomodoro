@@ -67,7 +67,7 @@ class Timer extends React.Component {
       <Counter
         minutes={this.state.counter}
         running={this.props.running}
-        counterView={this.props.counter}
+        counterView={this.props.counterView}
       />
     )
   }
@@ -79,8 +79,8 @@ Timer.propTypes = {
   longRest: PropTypes.number.isRequired,
   iterations: PropTypes.number.isRequired,
   running: PropTypes.bool.isRequired,
-  counter: PropTypes.func.isRequired,
-  notifier: PropTypes.func.isRequired
+  counterView: PropTypes.element.isRequired,
+  notifier: PropTypes.element.isRequired
 }
 
 export default Timer
