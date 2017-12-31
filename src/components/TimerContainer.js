@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
     longRest: state.longRest,
     iterations: state.iterations,
     running: state.running,
-    counter: state.counter,
+    counterView: state.counter,
     notifier: state.notifier
   }
 }
