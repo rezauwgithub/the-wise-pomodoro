@@ -1,24 +1,27 @@
 import React from 'react'
 import Timer from './Timer'
 import { shallow } from 'enzyme'
-import SimpleDigitalCounter from './counters/SimpleDigitalCounter'
-import CowNotifier from '../notifiers/CowNotifier'
 import { fetchQuote } from '../actions'
 
 describe('Timer', () => {
-  const wrapper = shallow(<Timer
-    work={25}
-    shortRest={5}
-    longRest={15}
-    iterations={4}
-    running={false}
-    counter={SimpleDigitalCounter}
-    notifier={CowNotifier}
-    fetchQuote={fetchQuote}
-    />)
+  let wrapper
 
   beforeEach(() => {
     jest.useFakeTimers()
+
+    function Counter() {}
+    function Notifier() {}
+
+    wrapper = shallow(<Timer
+      work={25}
+      shortRest={5}
+      longRest={15}
+      iterations={4}
+      running={false}
+      counter={Counter}
+      notifier={Notifier}
+      fetchQuote={fetchQuote}
+      />)
   })
 
   test("Starts when receive `running` props as `true`", () => {
