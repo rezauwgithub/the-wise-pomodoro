@@ -11,8 +11,8 @@ describe('Timer', () => {
   beforeEach(() => {
     jest.useFakeTimers()
 
-    CounterView = React.createElement((props) => {})
-    Notifier = React.createElement((props) => {})
+    CounterView = React.createElement('<div />')
+    Notifier = React.createElement('<div />')
 
     wrapper = shallow(<Timer
       work={25}
