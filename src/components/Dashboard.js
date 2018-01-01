@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function FormElement(props) {
   const {name, label, value, onChange, disabled} = props
@@ -34,6 +35,17 @@ function Dashboard(props) {
       </div>
     </div>
   )
+}
+
+Dashboard.propTypes = {
+  work: PropTypes.number.isRequired,
+  shortRest: PropTypes.number.isRequired,
+  longRest: PropTypes.number.isRequired,
+  iterations: PropTypes.number.isRequired,
+  running: PropTypes.bool.isRequired,
+  start: PropTypes.func.isRequired,
+  stop: PropTypes.func.isRequired,
+  changeParameter: PropTypes.func.isRequired
 }
 
 export default Dashboard
