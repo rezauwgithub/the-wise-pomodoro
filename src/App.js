@@ -10,6 +10,11 @@ class App extends Component {
           <header className="column col-12">
             <div className="text-center">
               <h1>The wise Pomodoro</h1>
+              <p>
+                 &#10003; Simple
+                 &#10003; 100% offline
+                 &#10003; Persists config
+              </p>
             </div>
           </header>
         </div>
