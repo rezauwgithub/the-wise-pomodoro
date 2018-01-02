@@ -25,7 +25,9 @@ const timer = (state = timerInitialState, action) => {
 const dashboard = (state = dashboardInitialState, action) => {
   switch (action.type) {
     case 'CHANGE_PARAMETER':
-      return {...state, [action.parameter]: parseInt(action.value, 10) }
+      const integerValue = parseInt(action.value, 10)
+      const value = Number.isNaN(integerValue) ? 0 : integerValue
+      return {...state, [action.parameter]: value }
     default:
       return state
   }

@@ -24,4 +24,14 @@ describe("store", () => {
 
     expect(state.dashboard.foo).toBe(1)
   })
+
+  test("`CHANGE_PARAMETER` sets parameter to 0 when value can'be be coerced to integer", () => {
+    state = store(state, {
+      type: "CHANGE_PARAMETER",
+      parameter: "foo",
+      value: "a"
+    })
+
+    expect(state.dashboard.foo).toBe(0)
+  })
 })
