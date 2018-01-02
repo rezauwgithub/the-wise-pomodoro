@@ -6,13 +6,13 @@ describe("store", () => {
   test("`START` sets `running` to true", () => {
     state = store(state, { type: "START" })
 
-    expect(state.running).toBe(true)
+    expect(state.timer.running).toBe(true)
   })
 
   test("`STOP` sets `running` to false", () => {
     state = store(state, { type: "STOP" })
 
-    expect(state.running).toBe(false)
+    expect(state.timer.running).toBe(false)
   })
 
   test("`CHANGE_PARAMETER` sets given parameter to given value as integer", () => {
@@ -22,6 +22,6 @@ describe("store", () => {
       value: "1"
     })
 
-    expect(state.foo).toBe(1)
+    expect(state.dashboard.foo).toBe(1)
   })
 })
