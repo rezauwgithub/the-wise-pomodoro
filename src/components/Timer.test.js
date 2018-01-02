@@ -3,7 +3,8 @@ import { shallow } from 'enzyme'
 
 import Timer from './Timer'
 import Counter from './Counter'
-import { fetchQuote } from '../actions'
+import SimpleDigitalCounter from './counters/SimpleDigitalCounter'
+import CowNotifier from '../notifiers/CowNotifier'
 
 describe('Timer', () => {
   let wrapper, CounterView, Notifier
@@ -11,18 +12,12 @@ describe('Timer', () => {
   beforeEach(() => {
     jest.useFakeTimers()
 
-    CounterView = React.createElement('<div />')
-    Notifier = React.createElement('<div />')
-
     wrapper = shallow(<Timer
       work={25}
       shortRest={5}
       longRest={15}
       iterations={4}
       running={false}
-      counterView={CounterView}
-      notifier={Notifier}
-      fetchQuote={fetchQuote}
       />)
   })
 

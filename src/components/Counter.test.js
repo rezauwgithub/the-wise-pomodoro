@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import Counter from './Counter'
+import SimpleDigitalCounter from './counters/SimpleDigitalCounter'
 
 describe('Counter', () => {
   let wrapper, CounterView, Notifier
@@ -9,12 +10,9 @@ describe('Counter', () => {
   beforeEach(() => {
     jest.useFakeTimers()
 
-    CounterView = React.createElement('<div />')
-
     wrapper = shallow(<Counter
       minutes={25}
       running={false}
-      counterView={CounterView}
       />)
   })
 
@@ -31,7 +29,7 @@ describe('Counter', () => {
 
   test("renders counter view forwarding needed props", () => {
     expect(wrapper.contains(
-      <CounterView minutes={25} running={false} seconds={0} />
+      <SimpleDigitalCounter minutes={25} running={false} seconds={0} />
     )).toBe(true)
   })
 })

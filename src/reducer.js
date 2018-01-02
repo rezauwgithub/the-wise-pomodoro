@@ -1,6 +1,4 @@
 import { combineReducers } from 'redux'
-import SimpleDigitalCounter from './components/counters/SimpleDigitalCounter'
-import CowNotifier from './notifiers/CowNotifier'
 
 const timerInitialState = {
   running: false
@@ -10,9 +8,7 @@ const dashboardInitialState = {
   work: 25,
   shortRest: 5,
   longRest: 15,
-  iterations: 4,
-  counter: SimpleDigitalCounter,
-  notifier: CowNotifier
+  iterations: 4
 }
 
 const timer = (state = timerInitialState, action) => {

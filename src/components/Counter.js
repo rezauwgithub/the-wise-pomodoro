@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import SimpleDigitalCounter from './counters/SimpleDigitalCounter'
 
 // Countdown counter.
 //
@@ -42,7 +43,7 @@ class Counter extends React.Component {
 
   render() {
     return (
-      <this.props.counterView
+      <SimpleDigitalCounter
         running = {this.props.running}
         minutes = {this.state.minutes}
         seconds = {this.state.seconds}
@@ -53,8 +54,7 @@ class Counter extends React.Component {
 
 Counter.propTypes = {
   minutes: PropTypes.number.isRequired,
-  running: PropTypes.bool.isRequired,
-  counterView: PropTypes.element.isRequired
+  running: PropTypes.bool.isRequired
 }
 
 export default Counter

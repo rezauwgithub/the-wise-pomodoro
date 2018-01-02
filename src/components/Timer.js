@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Counter from './Counter'
+import CowNotifier from '../notifiers/CowNotifier'
 
 // Pomodoro timer.
 //
@@ -48,7 +49,7 @@ class Timer extends React.Component {
       setTimeout(resolve, minutes * 60 * 1000)
     ).then(() => {
       if (this.props.running) {
-        this.props.notifier()
+        CowNotifier()
         callback()
       }
     })
@@ -66,7 +67,6 @@ class Timer extends React.Component {
       <Counter
         minutes={this.state.counter}
         running={this.props.running}
-        counterView={this.props.counterView}
       />
     )
   }
@@ -77,9 +77,7 @@ Timer.propTypes = {
   shortRest: PropTypes.number.isRequired,
   longRest: PropTypes.number.isRequired,
   iterations: PropTypes.number.isRequired,
-  running: PropTypes.bool.isRequired,
-  counterView: PropTypes.element.isRequired,
-  notifier: PropTypes.element.isRequired
+  running: PropTypes.bool.isRequired
 }
 
 export default Timer
