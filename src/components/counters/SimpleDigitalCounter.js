@@ -11,7 +11,7 @@ function SimpleDigitalCounter(props) {
 
   return (
     <div className="columns">
-      <div className="column col-12 text-center d-inline-block" style={ { "font-size": "6em" } }>
+      <div className="column col-12 text-center d-inline-block" style={ { fontSize: "6em" } }>
         <span>{formatTime(minutes)}:{formatTime(seconds)}</span>
       </div>
     </div>
