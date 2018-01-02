@@ -17,25 +17,24 @@ class Timer extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.running) {
-      this.work(1, nextProps.iterations, nextProps.work, nextProps.shortRest, nextProps.longRest, nextProps.fetchQuote)
+      this.work(1, nextProps.iterations, nextProps.work, nextProps.shortRest, nextProps.longRest)
     } else {
       this.updateCounter(nextProps.work)
     }
   }
 
   // Work interval.
-  work(currentIteration, iterations, work, shortRest, longRest, fetchQuote) {
-    fetchQuote()
+  work(currentIteration, iterations, work, shortRest, longRest) {
     this.runInterval(work, () => {
-      this.rest(currentIteration, iterations, work, shortRest, longRest, fetchQuote)
+      this.rest(currentIteration, iterations, work, shortRest, longRest)
     })
   }
 
   // Rest interval.
-  rest(currentIteration, iterations, work, shortRest, longRest, fetchQuote) {
+  rest(currentIteration, iterations, work, shortRest, longRest) {
     const rest = (currentIteration % iterations === 0) ? longRest : shortRest
     this.runInterval(rest, () => {
-      this.work(currentIteration + 1, iterations, work, shortRest, longRest, fetchQuote)
+      this.work(currentIteration + 1, iterations, work, shortRest, longRest)
     })
   }
 

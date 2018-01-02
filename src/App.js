@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import DashboardContainer from './components/DashboardContainer'
 import TimerContainer from './components/TimerContainer'
-import QuoteContainer from './components/QuoteContainer'
 
 class App extends Component {
   render() {
@@ -18,7 +17,6 @@ class App extends Component {
         <div className="divider">
           <TimerContainer />
           <DashboardContainer />
-          <QuoteContainer />
         </div>
       </div>
     );

@@ -8,8 +8,7 @@ const initialState = {
   iterations: 4,
   running: false,
   counter: SimpleDigitalCounter,
-  notifier: CowNotifier,
-  quote: ""
+  notifier: CowNotifier
 }
 
 const store = (state = initialState, action) => {
@@ -20,9 +19,6 @@ const store = (state = initialState, action) => {
       return { ...state, running: false }
     case 'CHANGE_PARAMETER':
       return {...state, [action.parameter]: parseInt(action.value, 10) }
-    case 'REQUEST_QUOTE':
-    case 'RECEIVE_QUOTE':
-      return {...state, quote: action.quote, quote_author: action.author}
     default:
       return state
   }
