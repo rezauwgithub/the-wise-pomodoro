@@ -12,6 +12,7 @@ class App extends Component {
               <h1>The wise Pomodoro</h1>
               <p>
                  &#10003; Simple
+                 &#10003; No sign up / in
                  &#10003; 100% offline
                  &#10003; Persists config
               </p>
