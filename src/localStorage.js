@@ -1,3 +1,5 @@
+// Save and load redux state to local storage
+
 export const loadState = () => {
   try {
     const serializedState = localStorage.getItem('state')
