@@ -26,7 +26,7 @@ const dashboard = (state = dashboardInitialState, action) => {
   switch (action.type) {
     case 'CHANGE_PARAMETER':
       const integerValue = parseInt(action.value, 10)
-      const value = Number.isNaN(integerValue) ? 0 : integerValue
+      const value = (Number.isNaN(integerValue) || integerValue < 0) ? 0 : integerValue
       return {...state, [action.parameter]: value }
     default:
       return state
